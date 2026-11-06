@@ -117,8 +117,8 @@ jobs:
           package-name: liter-llm-cli
           binary-name: liter-llm
 
-      - name: Build mock-server (linux-arm64 only — consumed by e2e-tests)
-        if: matrix.target == 'aarch64-unknown-linux-gnu'
+      - name: Build mock-server (linux-x64 only — consumed by e2e-tests)
+        if: matrix.target == 'x86_64-unknown-linux-gnu'
         shell: bash
         run: cargo build --manifest-path e2e/rust/Cargo.toml --bin mock-server --release
 
@@ -140,7 +140,7 @@ jobs:
     name: E2E (${{ matrix.lang }})
     if: github.repository == 'xberg-io/liter-llm' && github.actor != 'dependabot[bot]'
     needs: [build-ffi]
-    runs-on: ${{ matrix.lang == 'swift' && 'macos-26' || 'ubuntu-24.04-arm' }}
+    runs-on: ${{ matrix.lang == 'swift' && 'macos-26' || 'ubuntu-latest' }}
     timeout-minutes: 60
     strategy:
       fail-fast: false
@@ -208,7 +208,7 @@ jobs:
         if: matrix.lang != 'swift' && matrix.lang != 'kotlin_android'
         uses: actions/download-artifact@v8
         with:
-          name: ffi-aarch64-unknown-linux-gnu
+          name: ffi-x86_64-unknown-linux-gnu
           path: ffi-artifacts
 
       - name: Stage FFI artifacts
@@ -241,7 +241,7 @@ jobs:
         if: matrix.lang == 'kotlin_android'
         uses: actions/download-artifact@v8
         with:
-          name: ffi-aarch64-unknown-linux-gnu
+          name: ffi-x86_64-unknown-linux-gnu
           path: ffi-artifacts
 
       - name: Start mock-server (kotlin_android)
