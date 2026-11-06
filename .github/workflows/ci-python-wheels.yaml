@@ -28,5 +28,5 @@ permissions:
 jobs:
   wheels:
     name: Python wheels
-    if: github.repository == 'xberg-io/liter-llm' && github.actor != 'dependabot[bot]'
+    if: github.repository == 'agarg21/liter-llm' && github.actor != 'dependabot[bot]'
     uses: ./.github/workflows/python-wheels.yaml

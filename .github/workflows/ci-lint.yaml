@@ -32,7 +32,7 @@ jobs:
 
   validate:
     name: Validate
-    if: github.repository == 'xberg-io/liter-llm' && github.actor != 'dependabot[bot]'
+    if: github.repository == 'agarg21/liter-llm' && github.actor != 'dependabot[bot]'
     uses: xberg-io/actions/.github/workflows/reusable-validate.yml@v1
     with:
       # `check-fixture-snippets` is deliberately NOT enabled here: turning it on

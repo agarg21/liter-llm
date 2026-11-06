@@ -60,7 +60,7 @@ permissions:
 jobs:
   rust:
     name: Rust (${{ matrix.os }})
-    if: github.repository == 'xberg-io/liter-llm' && github.actor != 'dependabot[bot]'
+    if: github.repository == 'agarg21/liter-llm' && github.actor != 'dependabot[bot]'
     runs-on: ${{ matrix.os }}
     timeout-minutes: 60
     strategy:

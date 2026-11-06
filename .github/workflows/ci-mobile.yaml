@@ -41,7 +41,7 @@ permissions:
 jobs:
   android-check:
     name: Android cargo check (${{ matrix.abi }})
-    if: github.repository == 'xberg-io/liter-llm' && github.actor != 'dependabot[bot]'
+    if: github.repository == 'agarg21/liter-llm' && github.actor != 'dependabot[bot]'
     runs-on: ubuntu-latest
     timeout-minutes: 30
     strategy:
@@ -63,7 +63,7 @@ jobs:
 
   ios-check:
     name: iOS cargo check (${{ matrix.target }})
-    if: github.repository == 'xberg-io/liter-llm' && github.actor != 'dependabot[bot]'
+    if: github.repository == 'agarg21/liter-llm' && github.actor != 'dependabot[bot]'
     runs-on: macos-26
     timeout-minutes: 30
     strategy:
@@ -85,7 +85,7 @@ jobs:
 
   xcframework-build:
     name: Build iOS XCFramework
-    if: github.repository == 'xberg-io/liter-llm' && github.actor != 'dependabot[bot]'
+    if: github.repository == 'agarg21/liter-llm' && github.actor != 'dependabot[bot]'
     runs-on: macos-26
     timeout-minutes: 45
     steps:
@@ -101,7 +101,7 @@ jobs:
 
   kotlin-android-build:
     name: Build Kotlin Android (${{ matrix.abi }})
-    if: github.repository == 'xberg-io/liter-llm' && github.actor != 'dependabot[bot]'
+    if: github.repository == 'agarg21/liter-llm' && github.actor != 'dependabot[bot]'
     runs-on: ubuntu-latest
     timeout-minutes: 30
     strategy:

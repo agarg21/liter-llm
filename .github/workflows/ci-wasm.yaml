@@ -47,7 +47,7 @@ permissions:
 jobs:
   wasm32:
     name: Wasm32 clippy and tests
-    if: github.repository == 'xberg-io/liter-llm' && github.actor != 'dependabot[bot]'
+    if: github.repository == 'agarg21/liter-llm' && github.actor != 'dependabot[bot]'
     runs-on: ubuntu-24.04-arm
     timeout-minutes: 30
     steps:
